@@ -1,0 +1,3 @@
+port = 9001
+db_path = "./guestbook.db"
+log_path = "./guestbook.log"
