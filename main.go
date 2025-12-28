@@ -12,8 +12,8 @@ import (
 	"strings"
 	"time"
 
-	_ "github.com/mattn/go-sqlite3"
 	"github.com/BurntSushi/toml"
+	_ "github.com/mattn/go-sqlite3"
 )
 
 type Config struct {
@@ -73,6 +73,7 @@ func main() {
 	http.HandleFunc("/comments", commentsHandler)
 	http.HandleFunc("/all", allCommentsHandler)
 
+	addr := fmt.Sprintf(":%d", config.Port)
 	fmt.Printf("Guestbook started :)")
 	log.Fatal(http.ListenAndServe(addr, nil))
 }
